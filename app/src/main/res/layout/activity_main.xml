@@ -4,15 +4,121 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:padding="16dp"
     tools:context=".MainActivity">
 
+    <!--TextView nome do App-->
     <TextView
+        android:id="@+id/CalcTextV"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:text="Calculadora"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:textSize="45dp" />
+
+    <!--EditText para colocar o primeiro número para calcular-->
+    <EditText
+        android:id="@+id/Numbers1EditT"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="42dp"
+        android:hint="@string/Number1_EditText"
+        android:inputType="numberDecimal"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/CalcTextV"/>
+
+    <!--EditText para colocar o segundo número para calcular-->
+    <EditText
+        android:id="@+id/Numbers2EditT"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="42dp"
+        android:hint="@string/Number2_EditText"
+        android:inputType="numberDecimal"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/Numbers1EditT"/>
+
+    <!--RaidioGrupo para opções de calculo-->
+    <RadioGroup
+            android:id="@+id/optionsRadioG"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="100dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/Numbers2EditT">
+
+            <!--RadioButton para subitração-->
+            <RadioButton
+                android:id="@+id/option_add"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20dp"
+                android:text="Sub(-)"/>
+
+            <!--RadioButton para soma-->
+            <RadioButton
+                android:id="@+id/option_sub"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20dp"
+                android:text="Soma(+)"/>
+
+            <!--RadioButton para divição-->
+            <RadioButton
+                android:id="@+id/option_div"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20dp"
+                android:text="Div(x)"/>
+
+             <!--RadioButton para multiplicação-->
+            <RadioButton
+                android:id="@+id/option_mult"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20dp"
+                android:text="Mult(÷)" />
+
+    </RadioGroup>
+
+         <!--TextView que irá mostrar que a partir dele mostrará o resultado-->
+        <TextView
+            android:id="@+id/ResultTextV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="100dp"
+            android:text="Resultado"
+            android:textSize="30dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/optionsRadioG" />
+
+        <!--TextView que irá exibir o resultado-->
+        <TextView
+            android:id="@+id/ResultNumbersTextV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="42dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/ResultTextV"/>
+
+        <!--Botão que irá fazar o cálculo-->
+        <Button
+            android:id="@+id/CalcButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            android:text="Calcular"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/ResultNumbersTextV"/>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

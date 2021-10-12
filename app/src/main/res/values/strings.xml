@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">ProjetoCalculadora2</string>
+    <string name="Number1_EditText">Digite o primeiro número</string>
+    <string name="Number2_EditText">Digite o segundo número</string>
 </resources>
