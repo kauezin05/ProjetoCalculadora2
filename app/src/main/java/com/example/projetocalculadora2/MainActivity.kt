@@ -29,10 +29,10 @@ class MainActivity : AppCompatActivity() {
         val selectedId = binding.optionsRadioG.checkedRadioButtonId/*Variável que irá  receber o qual radiogrup foi selecionado*/
 
         val NumberSigns = when (selectedId) { /*When que irá  identificar e fará a conta do radiogrup selecionado*/
-            R.id.option_add -> n1 + n2
-            R.id.option_sub -> n1 - n2
-            R.id.option_mult -> n1 * n2
-            else -> n1 / n2 
+            R.id.option_add -> Calc().Addition(n1, n2)
+            R.id.option_sub -> Calc().Subtraction(n1, n2)
+            R.id.option_mult -> Calc().Multiplication(n1, n2)
+            else -> Calc().Division(n1, n2)
         }
 
 
@@ -42,4 +42,33 @@ class MainActivity : AppCompatActivity() {
         binding.ResultNumbersTextV.text = Result.toString()/*código que irá  passar o resultado para a textview destinada*/
 
     }
+}
+
+class Calc{/*Classe de funções, para armazenar calculos da calculadora*/
+
+    fun Addition(n1: Double, n2: Double): Double{/*função de adição*/
+
+        var add = n1 + n2
+        return (add)
+    }
+
+
+    fun Subtraction(n1: Double, n2: Double): Double{/*função de subtração*/
+
+        var sub = n1 - n2
+        return (sub)
+    }
+
+    fun Multiplication(n1: Double, n2: Double): Double{/*função de multiplicação*/
+
+        var mult = n1 * n2
+        return (mult)
+    }
+
+    fun Division(n1: Double, n2: Double): Double{/*função de divição*/
+
+        var div = n1 / n2
+        return (div)
+    }
+
 }
